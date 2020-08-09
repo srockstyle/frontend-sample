@@ -18,8 +18,8 @@ React頑張ります。
 - 登場人物は作家・図書館の館長・図書館のスタッフ・図書館ユーザ
 
 ## やること
-- [ ] VSCode
-- [ ] Create apps
-- [ ] ClassMethodのサンプル写経
-- [ ] ClassMethodサンプルコンポーネント分割
+- [×] VSCode
+- [×] Create apps
+- [×] ClassMethodのサンプル写経
+- [ ] テンプレートで外側作ってみるぞ
 

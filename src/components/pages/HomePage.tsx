@@ -1,12 +1,16 @@
 import React from "react"
-import GenericTemplate from "../templates/GenericTemplate"
+import AlbumTemplate from "../templates/AlbumTemplate";
+
+type { 
+    children: Element; 
+};
 
 const HomePage: React.FC = () => {
     return (
-        <GenericTemplate title="トップページ">
-        <>トップページ</>
-        </GenericTemplate>
+        <AlbumTemplate>
+            <>トップページ</>
+        </AlbumTemplate>
     );
-}
+};
 
 export default HomePage
