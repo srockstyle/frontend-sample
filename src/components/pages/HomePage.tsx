@@ -3,7 +3,7 @@ import ApplayoutTemplate from "../templates/AppLayoutTemplate/AppLayoutTemplate"
 const HomePage: React.FC = () => {
     return (
         <ApplayoutTemplate>
-            <>NieR：Automata Anthology</>
+            <>ClossFire:Thousand Anthology</>
         </ApplayoutTemplate>
     );
 };

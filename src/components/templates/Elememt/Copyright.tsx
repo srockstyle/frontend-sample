@@ -9,7 +9,7 @@ export const Copyright: React.FC = () => {
         {new Date().getFullYear()}
         {"."}
         <Link color="inherit" to="/">
-            by NieR：Automata Anthology
+            by ClossFire:Thousand Anthology
         </Link>{" "}
       </Typography>
     );
