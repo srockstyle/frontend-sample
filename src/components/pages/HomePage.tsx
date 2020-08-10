@@ -1,15 +1,10 @@
-import React from "react"
-import AlbumTemplate from "../templates/AlbumTemplate";
-
-type { 
-    children: Element; 
-};
-
+import React from "react";
+import ApplayoutTemplate from "../templates/AppLayoutTemplate/AppLayoutTemplate"
 const HomePage: React.FC = () => {
     return (
-        <AlbumTemplate>
-            <>トップページ</>
-        </AlbumTemplate>
+        <ApplayoutTemplate>
+            <>NieR：Automata Anthology</>
+        </ApplayoutTemplate>
     );
 };
 
