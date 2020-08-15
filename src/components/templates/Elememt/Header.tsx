@@ -7,5 +7,5 @@ export const Header: React.FC = () => {
             <Grid container justify="flex-end">
             </Grid>
         </>
-    )
-}
+    );
+};
