@@ -12,14 +12,9 @@ type Props = {
 };
 
 export const News: React.FC = ({ newsContents }) => {
-  //const [spacing] = React.useState<GridSpacing>(2);
   const [spacing, setSpacing] = React.useState<GridSpacing>(2);
 
   const classes = useStyles();
-
-  // ここに渡す
-  const bull = <span className={classes.bullet}>•</span>;
-
   return (
     <>
       <Grid item xs={12}>
