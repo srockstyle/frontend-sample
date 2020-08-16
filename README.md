@@ -60,3 +60,10 @@ APIと連携する。↑の処理が実際に走り、DBに登録されるよう
 - [ ] template内でmaterial Designを使ったレイアウトができるようにする
 - [ ] FormiKでのお問い合わせフォームの実装
 
+## 一通り終わったら追加
+- [ ] next.js
+- [ ] Webback
+- [ ] Redux
+- [ ] Redux toolkit
+- [ ] emotion
+- [ ] styled-component
