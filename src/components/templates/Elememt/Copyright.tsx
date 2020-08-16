@@ -13,7 +13,7 @@ export const Copyright: React.FC = () => {
         {new Date().getFullYear()}
         {"."}
         <Link color="inherit" to="/" className={classes.link}>
-          by ClossFire:Thousand Anthology
+          by ClossFire:Thousand
         </Link>{" "}
       </Typography>
     </Box>

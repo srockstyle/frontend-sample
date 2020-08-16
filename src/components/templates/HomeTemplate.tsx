@@ -1,5 +1,5 @@
 import { makeStyles } from "@material-ui/core";
-//import { GridSpacing } from '@material-ui/core/Grid'
+// import { GridSpacing } from "@material-ui/core/Grid";
 import Box from "@material-ui/core/Box";
 import React from "react";
 
@@ -10,13 +10,14 @@ import { Header } from "./Elememt/Header";
 import { Copyright } from "./Elememt/Copyright";
 import { Navigation } from "./Elememt/Navigation";
 import { News } from "./Elememt/News";
+
 import { NewsMenus } from "../pages/HomePage";
 
 type Props = {
-  newsContents: NewsMenus;
+  newsContents: NewsMenus[];
 };
 
-export const HomeTemplate: React.FC<Props> = ({ children, newsContents }) => {
+export const HomeTemplate: React.FC<Props> = ({ newsContents }) => {
   //const [spacing, setSpacing] = React.useState<GridSpacing>(2);
   const classes = useStyles();
   return (

@@ -2,56 +2,52 @@ import { makeStyles } from "@material-ui/core";
 import Grid, { GridSpacing } from "@material-ui/core/Grid";
 import Paper from "@material-ui/core/Paper";
 import React from "react";
+import Button from "@material-ui/core/Button";
+import Typography from "@material-ui/core/Typography";
+import { NewsMenu } from "../../pages/HomePage";
+import { NewsMenus } from "../../pages/HomePage";
 
-type NewsContents = {
-  key: string;
-  date: string;
-  title: string;
-  discription: string;
+type Props = {
+  newsContents: NewsMenus[];
 };
 
-export const News: React.FC = ({ children }) => {
+export const News: React.FC = ({ newsContents }) => {
+  //const [spacing] = React.useState<GridSpacing>(2);
   const [spacing, setSpacing] = React.useState<GridSpacing>(2);
 
   const classes = useStyles();
 
-  // 配列定義
-  // APIで引っ張ってくるようにする。
-  // keyってどうやってやればええやろか。
-  const items: NewsContents[] = [
-    {
-      key: "1",
-      date: "20200402",
-      title: "サイトオープン",
-      discription: "サイトオープン",
-    },
-    {
-      key: "2",
-      date: "20200402",
-      title: "サイト更新1",
-      discription: "サイト更新1",
-    },
-    {
-      key: "3",
-      date: "20200402",
-      title: "サイト更新2",
-      discription: "サイト更新2",
-    },
-    {
-      key: "4",
-      date: "20200402",
-      title: "サイト更新3",
-      discription: "サイト更新4",
-    },
-  ];
+  // ここに渡す
+  const bull = <span className={classes.bullet}>•</span>;
 
   return (
     <>
       <Grid item xs={12}>
         <Grid container justify="center" spacing={spacing}>
-          {items.map((value) => (
-            <Grid key={value.key} item>
-              <Paper className={classes.paper}></Paper>
+          <Typography variant="h4" component="h2">
+            News
+          </Typography>
+        </Grid>
+        <Grid container justify="center" spacing={spacing}>
+          {newsContents.map((news: NewsMenu) => (
+            <Grid key={news.key} item>
+              <Paper className={classes.paper}>
+                <Typography
+                  className={classes.title}
+                  color="textSecondary"
+                  gutterBottom
+                >
+                  {news.date}
+                </Typography>
+                <Typography variant="h5" component="h2">
+                  {news.title}
+                </Typography>
+                <Typography variant="body2" component="p">
+                  {news.discription}
+                  <br />
+                </Typography>
+                <Button size="small">More</Button>
+              </Paper>
             </Grid>
           ))}
         </Grid>
@@ -70,6 +66,20 @@ const useStyles = makeStyles((theme) => ({
   },
   control: {
     padding: theme.spacing(2),
+  },
+  card: {
+    minWidth: 275,
+  },
+  bullet: {
+    display: "inline-block",
+    margin: "0 2px",
+    transform: "scale(0.8)",
+  },
+  title: {
+    fontSize: 14,
+  },
+  pos: {
+    marginBottom: 12,
   },
 }));
 
