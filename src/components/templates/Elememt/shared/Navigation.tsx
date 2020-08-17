@@ -5,6 +5,7 @@ import {
   Theme,
   createStyles,
 } from "@material-ui/core/styles";
+import { Link } from "react-router-dom";
 import clsx from "clsx";
 // import Grid from '@material-ui/core/Grid'
 import Button from "@material-ui/core/Button";
@@ -34,6 +35,10 @@ const useStyles = makeStyles({
   },
   fullList: {
     width: "auto",
+  },
+  link: {
+    textDecoration: "none",
+    color: "gray",
   },
 });
 
@@ -71,19 +76,27 @@ export const Navigation: React.FC = () => {
       <List>
         <ListItem button key="news">
           <ListItemIcon></ListItemIcon>
-          <ListItemText primary="news" />
+          <Link to="/" className={classes.link}>
+            <ListItemText primary="news" />
+          </Link>
         </ListItem>
         <ListItem button key="world">
           <ListItemIcon></ListItemIcon>
-          <ListItemText primary="world" />
+          <Link to="/world" className={classes.link}>
+            <ListItemText primary="world" />
+          </Link>
         </ListItem>
         <ListItem button key="character">
           <ListItemIcon></ListItemIcon>
-          <ListItemText primary="character" />
+          <Link to="/character" className={classes.link}>
+            <ListItemText primary="character" />
+          </Link>
         </ListItem>
         <ListItem button key="contact">
           <ListItemIcon></ListItemIcon>
-          <ListItemText primary="contact" />
+          <Link to="/form" className={classes.link}>
+            <ListItemText primary="contact" />
+          </Link>
         </ListItem>
       </List>
       <Divider />

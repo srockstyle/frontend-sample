@@ -1,5 +1,6 @@
 import React from "react";
+import { ChontactFormTemplate } from "../../templates/ContactForm/index";
 
 export const ContactForm: React.FC = () => {
-  return <>お問い合わせ</>;
+  return <ChontactFormTemplate />;
 };
