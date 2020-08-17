@@ -53,7 +53,7 @@ APIと連携する。↑の処理が実際に走り、DBに登録されるよう
 （あとで考える。）
 
 ## 学習の過程と実装で考えること
-- [ ] VSCode
+- [ ] VSCod
 - [ ] Create apps
 - [ ] ClassMethodのサンプル写経
 - [ ] コンポーネントからtemplate呼び出し

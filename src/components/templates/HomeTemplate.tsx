@@ -14,10 +14,10 @@ import { News } from "./Elememt/News";
 import { NewsMenus } from "../pages/HomePage";
 
 type Props = {
-  newsContents: NewsMenus[];
+  news: NewsMenus[];
 };
 
-export const HomeTemplate: React.FC<Props> = ({ newsContents }) => {
+export const HomeTemplate: React.FC<Props> = ({ news }) => {
   //const [spacing, setSpacing] = React.useState<GridSpacing>(2);
   const classes = useStyles();
   return (
@@ -32,7 +32,7 @@ export const HomeTemplate: React.FC<Props> = ({ newsContents }) => {
       >
         <img src={top} width="100%" alt="top" />
       </Box>
-      <News newsContents={newsContents} />
+      <News newsMenus={news.newsMenus} />
       <Copyright />
     </>
   );

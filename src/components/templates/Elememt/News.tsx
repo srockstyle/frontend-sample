@@ -8,10 +8,10 @@ import { NewsMenu } from "../../pages/HomePage";
 import { NewsMenus } from "../../pages/HomePage";
 
 type Props = {
-  newsContents: NewsMenus[];
+  newsMenus: NewsMenus[];
 };
 
-export const News: React.FC = ({ newsContents }) => {
+export const News: React.FC = ({ newsMenus }) => {
   const [spacing, setSpacing] = React.useState<GridSpacing>(2);
 
   const classes = useStyles();
@@ -24,21 +24,21 @@ export const News: React.FC = ({ newsContents }) => {
           </Typography>
         </Grid>
         <Grid container justify="center" spacing={spacing}>
-          {newsContents.map((news: NewsMenu) => (
-            <Grid key={news.key} item>
+          {newsMenus.map((newsMenu: NewsMenu) => (
+            <Grid key={newsMenu.key} item>
               <Paper className={classes.paper}>
                 <Typography
                   className={classes.title}
                   color="textSecondary"
                   gutterBottom
                 >
-                  {news.date}
+                  {newsMenu.date}
                 </Typography>
                 <Typography variant="h5" component="h2">
-                  {news.title}
+                  {newsMenu.title}
                 </Typography>
                 <Typography variant="body2" component="p">
-                  {news.discription}
+                  {newsMenu.discription}
                   <br />
                 </Typography>
                 <Button size="small">More</Button>
