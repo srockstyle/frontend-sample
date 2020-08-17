@@ -6,14 +6,18 @@ import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 import { NewsMenu } from "../../pages/HomePage";
 import { NewsMenus } from "../../pages/HomePage";
+import { NewsMenuItem } from "./NewsMenuItem";
 
 type Props = {
   newsMenus: NewsMenus[];
 };
 
-export const News: React.FC = ({ newsMenus }) => {
+export const News: React.FC<Props> = ({ newsMenus }) => {
+  // Gridの間のスペース指定。
   const [spacing, setSpacing] = React.useState<GridSpacing>(2);
-
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setSpacing(Number((event.target as HTMLInputElement).value) as GridSpacing);
+  };
   const classes = useStyles();
   return (
     <>
@@ -25,25 +29,7 @@ export const News: React.FC = ({ newsMenus }) => {
         </Grid>
         <Grid container justify="center" spacing={spacing}>
           {newsMenus.map((newsMenu: NewsMenu) => (
-            <Grid key={newsMenu.key} item>
-              <Paper className={classes.paper}>
-                <Typography
-                  className={classes.title}
-                  color="textSecondary"
-                  gutterBottom
-                >
-                  {newsMenu.date}
-                </Typography>
-                <Typography variant="h5" component="h2">
-                  {newsMenu.title}
-                </Typography>
-                <Typography variant="body2" component="p">
-                  {newsMenu.discription}
-                  <br />
-                </Typography>
-                <Button size="small">More</Button>
-              </Paper>
-            </Grid>
+            <NewsMenuItem key={newsMenu.key} newsMenu={newsMenu} />
           ))}
         </Grid>
       </Grid>
