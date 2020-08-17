@@ -2,24 +2,25 @@ import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 import "./App.css";
-
-import HomePage from "./components/pages/HomePage";
-import OverViewPage from "./components/pages/WorldPage";
-import GalleryPage from "./components/pages/GalleryPage";
-import CharacterPage from "./components/pages/CharacterPage";
-import SystemPage from "./components/pages/SystemPage";
-import FormPage from "./components/pages/FormPage";
+// {}で囲んであげる
+// ファイル名と一致するように
+import { Home } from "./components/pages/Home";
+import { World } from "./components/pages/World";
+import { Gallery } from "./components/pages/Gallery";
+import { Character } from "./components/pages/Character/index";
+import { System } from "./components/pages/System";
+import { ContactForm } from "./components/pages/ContactForm";
 
 const App: React.FC = () => {
   return (
     <Router>
       <Switch>
-        <Route path="/" component={HomePage} exact />
-        <Route path="/world" component={OverViewPage} exact />
-        <Route path="/character" component={CharacterPage} exact />
-        <Route path="/system" component={SystemPage} exact />
-        <Route path="/gallery" component={GalleryPage} exact />
-        <Route path="/form" component={FormPage} exact />
+        <Route path="/" component={Home} exact />
+        <Route path="/world" component={World} exact />
+        <Route path="/character" component={Character} exact />
+        <Route path="/system" component={System} exact />
+        <Route path="/gallery" component={Gallery} exact />
+        <Route path="/form" component={ContactForm} exact />
       </Switch>
     </Router>
   );

@@ -1,5 +1,5 @@
 import React from "react";
-import HomeTemplate from "../templates/HomeTemplate";
+import { HomeTemplate } from "../../templates/Home";
 
 export type NewsMenu = {
   id: number;
@@ -10,12 +10,11 @@ export type NewsMenu = {
   link: string;
 };
 
-export type NewsMenus = {
+export type NewsType = {
   newsMenus: NewsMenu[];
 };
-
-const HomePage: React.FC = () => {
-  const news: NewsMenus = {
+export const Home: React.FC = () => {
+  const news: NewsType = {
     newsMenus: [
       {
         id: 1,
@@ -52,11 +51,14 @@ const HomePage: React.FC = () => {
     ],
   };
 
+  // JSONの構造としてはこういう↓のを想定してる
+  // news.newsMenus[0].id;
+  // このnewsのnewsMenus配列が、HomeTemplateコンポーネント以下で必要になるので
+  // 一旦、以下のようにしてnewsのPropsで値を渡してあげてる
+
   return (
     <HomeTemplate news={news}>
       <></>
     </HomeTemplate>
   );
 };
-
-export default HomePage;

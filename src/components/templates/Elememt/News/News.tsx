@@ -1,17 +1,29 @@
-import { makeStyles } from "@material-ui/core";
-import Grid, { GridSpacing } from "@material-ui/core/Grid";
-import Paper from "@material-ui/core/Paper";
+import { Grid, makeStyles, GridSpacing, Typography } from "@material-ui/core";
+
 import React from "react";
-import Button from "@material-ui/core/Button";
-import Typography from "@material-ui/core/Typography";
-import { NewsMenu } from "../../pages/HomePage";
-import { NewsMenus } from "../../pages/HomePage";
+
+import { NewsMenu } from "../../../pages/Home";
 import { NewsMenuItem } from "./NewsMenuItem";
 
 type Props = {
-  newsMenus: NewsMenus[];
+  newsMenus: NewsMenu[];
 };
 
+// ここの段階では、親で定義されてるnewsオブジェクトの中のnewsMenusの中身だけが入ってくる
+// newsMenusは
+// 1. 配列になってる
+// 2. 配列の中身はNewsMenus型のオブジェクトが入ってる想定
+// 具体的にはこんな感じ↓
+// [
+//   {
+//     id: 1,
+//     key: "1",
+//     date: "20200402",
+//     title: "サイトオープン",
+//     discription: "公式サイトを起動",
+//     link: "",
+//   },
+// ]
 export const News: React.FC<Props> = ({ newsMenus }) => {
   // Gridの間のスペース指定。
   const [spacing, setSpacing] = React.useState<GridSpacing>(2);
@@ -19,6 +31,7 @@ export const News: React.FC<Props> = ({ newsMenus }) => {
     setSpacing(Number((event.target as HTMLInputElement).value) as GridSpacing);
   };
   const classes = useStyles();
+
   return (
     <>
       <Grid item xs={12}>

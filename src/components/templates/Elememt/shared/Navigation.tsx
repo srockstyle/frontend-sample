@@ -69,28 +69,24 @@ export const Navigation: React.FC = () => {
       onKeyDown={toggleDrawer(anchor, false)}
     >
       <List>
-        {["NEWS", "WORLD", "CHARACTER", "SYSTEM", "GALLERY"].map(
-          (text, index) => (
-            <ListItem button key={text}>
-              <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-              </ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItem>
-          )
-        )}
+        <ListItem button key="news">
+          <ListItemIcon></ListItemIcon>
+          <ListItemText primary="news" />
+        </ListItem>
+        <ListItem button key="world">
+          <ListItemIcon></ListItemIcon>
+          <ListItemText primary="world" />
+        </ListItem>
+        <ListItem button key="character">
+          <ListItemIcon></ListItemIcon>
+          <ListItemText primary="character" />
+        </ListItem>
+        <ListItem button key="contact">
+          <ListItemIcon></ListItemIcon>
+          <ListItemText primary="contact" />
+        </ListItem>
       </List>
       <Divider />
-      <List>
-        {["All mail", "Trash", "Spam"].map((text, index) => (
-          <ListItem button key={text}>
-            <ListItemIcon>
-              {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-            </ListItemIcon>
-            <ListItemText primary={text} />
-          </ListItem>
-        ))}
-      </List>
     </div>
   );
 

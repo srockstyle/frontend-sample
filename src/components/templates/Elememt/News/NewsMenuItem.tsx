@@ -4,7 +4,7 @@ import Paper from "@material-ui/core/Paper";
 import React from "react";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
-import { NewsMenu } from "../../pages/HomePage";
+import { NewsMenu } from "../../../pages/Home";
 
 type Props = {
   newsMenu: NewsMenu;

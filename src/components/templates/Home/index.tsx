@@ -4,32 +4,28 @@ import Box from "@material-ui/core/Box";
 import React from "react";
 
 // 画像は一つ一つimportが必要
-import top from "../images/top.jpg";
+import top from "../../images/top.jpg";
 
-import { Header } from "./Elememt/Header";
-import { Copyright } from "./Elememt/Copyright";
-import { Navigation } from "./Elememt/Navigation";
-import { News } from "./Elememt/News";
+import { Header } from "../Elememt/shared/Header";
+import { Copyright } from "../Elememt/shared/Copyright";
+import { Navigation } from "../Elememt/shared/Navigation";
+import { News } from "../Elememt/News/News";
 
-import { NewsMenus } from "../pages/HomePage";
+import { NewsType } from "../../pages/Home";
 
 type Props = {
-  news: NewsMenus[];
+  news: NewsType;
 };
 
 export const HomeTemplate: React.FC<Props> = ({ news }) => {
   //const [spacing, setSpacing] = React.useState<GridSpacing>(2);
   const classes = useStyles();
+
   return (
     <>
       <Header />
       <Navigation />
-      <Box
-        height="100vh"
-        display="flex"
-        flexDirection="column"
-        class={classes.root}
-      >
+      <Box height="100vh" display="flex" flexDirection="column">
         <img src={top} width="100%" alt="top" />
       </Box>
       <News newsMenus={news.newsMenus} />
@@ -42,5 +38,3 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
   },
 }));
-
-export default HomeTemplate;
