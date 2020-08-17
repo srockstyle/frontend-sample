@@ -76,5 +76,3 @@ const useStyles = makeStyles((theme) => ({
     marginBottom: 12,
   },
 }));
-
-export default News;

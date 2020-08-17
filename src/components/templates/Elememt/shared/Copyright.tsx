@@ -26,5 +26,3 @@ const usesStyles = makeStyles((theme) => ({
     margin: "5pt",
   },
 }));
-
-export default Copyright;
