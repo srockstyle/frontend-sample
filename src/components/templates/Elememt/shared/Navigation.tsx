@@ -92,6 +92,12 @@ export const Navigation: React.FC = () => {
             <ListItemText primary="character" />
           </Link>
         </ListItem>
+        <ListItem button key="gallery">
+          <ListItemIcon></ListItemIcon>
+          <Link to="/gallery" className={classes.link}>
+            <ListItemText primary="gallery" />
+          </Link>
+        </ListItem>
         <ListItem button key="contact">
           <ListItemIcon></ListItemIcon>
           <Link to="/form" className={classes.link}>
