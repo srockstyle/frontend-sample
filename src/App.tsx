@@ -7,6 +7,7 @@ import "./App.css";
 import { Home } from "./components/pages/Home";
 import { World } from "./components/pages/World";
 import { Gallery } from "./components/pages/Gallery";
+import { CharacterList } from "./components/pages/CharacterList";
 import { Character } from "./components/pages/Character";
 import { System } from "./components/pages/System";
 import { ContactForm } from "./components/pages/ContactForm";
@@ -19,7 +20,8 @@ const App: React.FC = () => {
       <Switch>
         <Route path="/" component={Home} exact />
         <Route path="/world" component={World} exact />
-        <Route path="/character" component={Character} exact />
+        <Route path="/character" component={CharacterList} exact />
+        <Route path="/character/:id" component={Character} exact />
         <Route path="/system" component={System} exact />
         <Route path="/gallery" component={Gallery} exact />
         <Route path="/books/:id" exact component={Book} />

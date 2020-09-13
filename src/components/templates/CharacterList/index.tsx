@@ -4,13 +4,16 @@ import { Box, makeStyles, Typography } from "@material-ui/core";
 import { Header } from "../Elememt/shared/Header";
 import { Copyright } from "../Elememt/shared/Copyright";
 import { Navigation } from "../Elememt/shared/Navigation";
-import { BookResponse } from "../../../service/ApiSample";
+
+import { CharactersResponse } from "../../../service/ApiSample";
+import { BookListItem } from "./BookListItem";
 
 type Props = {
-  book: BookResponse;
+  books: BookResponse[];
 };
 
-export const BookTemplate: React.FC<Props> = ({ book }) => {
+export const CharacterListTemplate: React.FC = () => {
+  //const [spacing, setSpacing] = React.useState<GridSpacing>(2);
   const classes = useStyles();
 
   return (
@@ -19,9 +22,8 @@ export const BookTemplate: React.FC<Props> = ({ book }) => {
       <Navigation />
       <Box height="100vh" display="flex" flexDirection="column">
         <Typography variant="h4" component="h2">
-          {book.title}
+          キャラクター紹介
         </Typography>
-        {book.description}
       </Box>
       <Copyright />
     </>

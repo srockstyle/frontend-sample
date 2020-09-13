@@ -1,12 +1,14 @@
-import React from "react";
+import {} from "formik";
+import React, { useState } from "react";
 import { ChontactFormTemplate } from "../../templates/ContactForm";
 
-//historyの型がなにかわからん;
-export type History = {
-  history: History;
+export type FormValues = {
+  firstName: string;
 };
 
 export const ContactForm: React.FC = () => {
+  // stateの初期化;
+  const [firstName, setFirstName] = useState("");
+  const [isContactComplete, setIsContactComplete] = useState(false);
   return <ChontactFormTemplate />;
-  //return <ChontactFormTemplate history={history} />;
 };

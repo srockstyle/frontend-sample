@@ -25,7 +25,12 @@ export const HomeTemplate: React.FC<Props> = ({ news }) => {
     <>
       <Header />
       <Navigation />
-      <Box height="100vh" display="flex" flexDirection="column">
+      <Box
+        height="100vh"
+        display="flex"
+        flexDirection="column"
+        className={classes.root}
+      >
         <img src={top} width="100%" alt="top" />
       </Box>
       <News newsMenus={news.newsMenus} />

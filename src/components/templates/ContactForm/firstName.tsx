@@ -33,10 +33,7 @@ export const ChontactFormTemplate: React.FC = () => {
           <Formik
             initialValues={initialState}
             onSubmit={(values, actions) => {
-              history.push({
-                pathname: "/inputcheck",
-                state: { firstname: values.firstName },
-              });
+              history.push("/inputcheck");
             }}
           >
             {({ handleChange, handleSubmit, values }) => (

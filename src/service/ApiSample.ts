@@ -9,6 +9,10 @@ type AuthorParams = {
   author_id: number;
 };
 
+type CharacterParams = {
+  character_id: number;
+};
+
 type NewsParams = {
   news_id: number;
 };
@@ -20,6 +24,14 @@ export type BookResponse = {
   description: string;
   url: string;
   author_id: number;
+};
+
+// 戻り値
+export type CharacterResponse = {
+  id: string;
+  title: string;
+  description: string;
+  catchphrase: string;
 };
 
 export type AuthorResponse = {
@@ -49,6 +61,28 @@ export function fetchBook(bookId: string) {
   // この中にこんな感じで認証
   // const apiToken = localStorage.getItem('apiKey')
   return httpClient.get(`/v1/books/${bookId}`);
+  // headerとかはこの中に書いてく
+  // {
+  //     headers: {
+  //        Authorization: `Token token=${apiToken}`,
+  //     }
+  // }
+}
+
+export function fetchCharacterList() {
+  return httpClient.get("/v1/books");
+  // headerとかはこの中に書いてく
+  // {
+  //     headers: {
+  //        Authorization: `Token token=${apiToken}`,
+  //     }
+  // }
+}
+
+export function fetchCharacter(characeterId: string) {
+  // この中にこんな感じで認証
+  // const apiToken = localStorage.getItem('apiKey')
+  return httpClient.get(`/v1/character/${characeterId}`);
   // headerとかはこの中に書いてく
   // {
   //     headers: {

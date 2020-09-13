@@ -32,15 +32,6 @@ export const Book: React.FC = () => {
       });
     }
   }, [id]);
-  // 名前
-  // useState(() => {
-  //   fetchBook(id).then((res) => {
-  //     // res.dataで中身が取得
-  //     //console.log(res);
-  //     setBook(res.data.book);
-  //   });
-  // });
-
   if (loading) return <div>Loading...</div>;
   return (
     <>

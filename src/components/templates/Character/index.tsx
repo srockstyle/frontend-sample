@@ -1,11 +1,15 @@
 import React from "react";
 import { Box, makeStyles, Typography } from "@material-ui/core";
-
 import { Header } from "../Elememt/shared/Header";
 import { Copyright } from "../Elememt/shared/Copyright";
 import { Navigation } from "../Elememt/shared/Navigation";
+import { CharacterResponse } from "../../../service/ApiSample";
 
-export const CharacterTemplate: React.FC = () => {
+type Props = {
+  character: CharacterResponse;
+};
+
+export const CharacterTemplate: React.FC<Props> = ({ character }) => {
   //const [spacing, setSpacing] = React.useState<GridSpacing>(2);
   const classes = useStyles();
 
